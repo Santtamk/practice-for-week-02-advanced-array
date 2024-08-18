@@ -21,12 +21,20 @@ console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'icity'));
 console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'ily'));
 // [ ]
 
-console.log(chooseyEndings(17, 'ily'));
+console.log(chooseyEndings(17, "ily"));
 // [ ]
 */
 
-let chooseyEndings = function(words, suffix) {
+let chooseyEndings = function (words, suffix) {
   // Your code here
+  if (!Array.isArray(words)) return [];
+  let newArr = words.filter((word) => {
+    if (word.endsWith(suffix) === -1) {
+      return empty;
+    }
+    return word.endsWith(suffix);
+  });
+  return newArr;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -35,4 +43,4 @@ try {
   module.exports = chooseyEndings;
 } catch (e) {
   module.exports = null;
-}
+}

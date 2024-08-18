@@ -8,12 +8,17 @@ Solve this using Array's `filter()` method.
 Examples:
 
 console.log(removeEWords('What time is it everyone?')); // 'What is it'
-console.log(removeEWords('Enter the building')); // 'building'
-
+console.log(removeEWords("Enter the building")); // 'building'
 */
 
-let removeEWords = function(sentence) {
-    // Your code here
+let removeEWords = function (sentence) {
+  // Your code here
+  let split = sentence.split(" ");
+  let char = "e";
+  let word = split.filter((item) => {
+    return !item.toLowerCase().includes(char);
+  });
+  return word.join(" ");
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -22,4 +27,4 @@ try {
   module.exports = removeEWords;
 } catch (e) {
   module.exports = null;
-}
+}

@@ -8,21 +8,39 @@ Solve this using `array.map()`.
 
 Examples:
 
-console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
-console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
-console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
-console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 
 */
 
 function snakeToCamel(str) {
-    // Your code here
+  // Your code here
+
+  let split = str.split("_");
+  let answer = split.map((item) => helper(item));
+  return answer.join("");
 }
 
+function helper(letter) {
+  let word = letter.split("");
+  let newLetter = [];
+  for (let i = 0; i < word.length; i++) {
+    if (i === 0) {
+      newLetter.push(word[i].toUpperCase());
+    } else {
+      newLetter.push(word[i].toLowerCase());
+    }
+  }
+  return newLetter.join("");
+}
+
+// console.log(helper("ACADEMY"));
+console.log(snakeToCamel("snakes_go_hiss")); // 'SnakesGoHiss'
+console.log(snakeToCamel("say_hello_world")); // 'SayHelloWorld'
+console.log(snakeToCamel("app_academy_is_cool")); // 'AppAcademyIsCool'
+console.log(snakeToCamel("APp_ACADEMY_iS_cOol")); // 'AppAcademyIsCool'
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = snakeToCamel;
+  module.exports = snakeToCamel;
 } catch (e) {
-    module.exports = null;
-}
+  module.exports = null;
+}
