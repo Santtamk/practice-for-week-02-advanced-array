@@ -39,7 +39,7 @@ console.log(twoDimensionalProduct(arr1)); // 360
 
 let arr2 = [[11, 4], [2]];
 console.log(twoDimensionalProduct(arr2)); // 88
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************
 
 try {
   module.exports = twoDimensionalProduct;
